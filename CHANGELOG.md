@@ -3,6 +3,124 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+### Added
+
+- **Add follow recommendations for onboarding** ([Gargron](https://github.com/tootsuite/mastodon/pull/15945), [Gargron](https://github.com/tootsuite/mastodon/pull/16161), [Gargron](https://github.com/tootsuite/mastodon/pull/16060), [Gargron](https://github.com/tootsuite/mastodon/pull/16077), [Gargron](https://github.com/tootsuite/mastodon/pull/16078), [Gargron](https://github.com/tootsuite/mastodon/pull/16160), [Gargron](https://github.com/tootsuite/mastodon/pull/16079), [noellabo](https://github.com/tootsuite/mastodon/pull/16044), [noellabo](https://github.com/tootsuite/mastodon/pull/16045), [Gargron](https://github.com/tootsuite/mastodon/pull/16152), [Gargron](https://github.com/tootsuite/mastodon/pull/16153), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16082), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16173), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16159))
+  - Tutorial on first web UI launch has been replaced with follow suggestions
+  - Follow suggestions take user locale into account and are a mix of accounts most followed by currently active local users, and accounts that wrote the most shared/favourited posts in the last 30 days
+  - Only accounts that have opted-in to being discoverable from their profile settings, and that do not require follow requests, will be suggested
+  - Moderators can review suggestions for every supported locale and suppress specific suggestions from appearing and admins can ensure certain accounts always show up in suggestions from the settings area
+  - New users no longer automatically follow admins
+- **Add server rules** ([Gargron](https://github.com/tootsuite/mastodon/pull/15769), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15778))
+  - Admins can create and edit itemized server rules
+  - They are available through the REST API and on the about page
+- **Add canonical e-mail blocks for suspended accounts** ([Gargron](https://github.com/tootsuite/mastodon/pull/16049))
+  - Normally, people can make multiple accounts using the same e-mail address using the `+` trick or by inserting or removing `.` characters from the first part of their address
+  - Once an account is suspended, it will no longer be possible for the e-mail address used by that account to be used for new sign-ups in any of its forms
+- Add management of delivery availability in admin UI ([noellabo](https://github.com/tootsuite/mastodon/pull/15771))
+- **Add system checks to dashboard in admin UI** ([Gargron](https://github.com/tootsuite/mastodon/pull/15989), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15954), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16002))
+  - The dashboard will now warn you if you some Sidekiq queues are not being processed, if you have not defined any server rules, or if you forgot to run database migrations from the latest Mastodon upgrade
+- Add inline description of moderation actions in admin UI ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15792))
+- Add "recommended" label to activity/peers API toggles in admin UI ([Gargron](https://github.com/tootsuite/mastodon/pull/16081))
+- Add joined date to profiles in web UI ([Gargron](https://github.com/tootsuite/mastodon/pull/16169))
+- Add transition to media modal background in web UI ([mkljczk](https://github.com/tootsuite/mastodon/pull/15843))
+- Add option to opt-out of unread notification markers in web UI ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15842))
+- Add borders to 📱, 🚲, and 📲 emojis in web UI ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15794), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16035))
+- Add dropdown for boost privacy in boost confirmation modal in web UI ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15704))
+- Add support for Ruby 3.0 ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16046), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16174))
+- Add `Message-ID` header to outgoing emails ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16076))
+  - Some e-mail spam filters penalize e-mails that have a `Message-ID` header that uses a different domain name than the sending e-mail address. Now, the same domain will be used
+- Add `af`, `gd` and `si` locales ([Gargron](https://github.com/tootsuite/mastodon/pull/16090))
+- Add guard against DNS rebinding attacks ([noellabo](https://github.com/tootsuite/mastodon/pull/16087), [noellabo](https://github.com/tootsuite/mastodon/pull/16095))
+- Add HTTP header to explicitly opt-out of FLoC by default ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16036))
+- Add missing push notification title for polls and statuses ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15929), [mkljczk](https://github.com/tootsuite/mastodon/pull/15564), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15931))
+- Add `POST /api/v1/emails/confirmations` to REST API ([Gargron](https://github.com/tootsuite/mastodon/pull/15816), [Gargron](https://github.com/tootsuite/mastodon/pull/15949))
+  - This method allows an app through which a user signed-up to request a new confirmation e-mail to be sent, or to change the e-mail of the account before it is confirmed
+- Add `GET /api/v1/accounts/lookup` to REST API ([Gargron](https://github.com/tootsuite/mastodon/pull/15740), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15750))
+  - This method allows to quickly convert a username of a known account to an ID that can be used with the REST API, or to check if a username is available
+  for sign-up
+- Add `policy` param to `POST /api/v1/push/subscriptions` in REST API ([Gargron](https://github.com/tootsuite/mastodon/pull/16040))
+  - This param allows an app to control from whom notifications should be delivered as push notifications to the app
+- Add `details` to error response for `POST /api/v1/accounts` in REST API ([Gargron](https://github.com/tootsuite/mastodon/pull/15803))
+  - This attribute allows an app to display more helpful information to the user about why the sign-up did not succeed
+
+### Changed
+
+- Change trending hashtags to be affected be reblogs ([Gargron](https://github.com/tootsuite/mastodon/pull/16164))
+- Change e-mail confirmation link to always redirect to web UI ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16151))
+- Change log level of worker lifecycle from to warn in streaming API ([Gargron](https://github.com/tootsuite/mastodon/pull/16110))
+- Change the nouns "toot" and "status" to "post" in web UI ([Gargron](https://github.com/tootsuite/mastodon/pull/16080), [Gargron](https://github.com/tootsuite/mastodon/pull/16089))
+- Change option labels on edit profile page ([Gargron](https://github.com/tootsuite/mastodon/pull/16041))
+- Change newly generated account IDs to not be enumerable ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15844))
+- Change Web Push API deliveries to use request pooling ([Gargron](https://github.com/tootsuite/mastodon/pull/16014))
+- Change multiple mentions with same username to render with domain ([Gargron](https://github.com/tootsuite/mastodon/pull/15718), [noellabo](https://github.com/tootsuite/mastodon/pull/16038))
+- Change health check endpoint to reveal less information ([Gargron](https://github.com/tootsuite/mastodon/pull/15988))
+- Change `mastodon:setup` to not call `assets:precompile` in Docker ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/13942))
+- Change max. image dimensions to 1920x1080px (1080p) ([Gargron](https://github.com/tootsuite/mastodon/pull/15690))
+- Change custom emoji to be animated when hovering container in web UI ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15637))
+- Change streaming API from deprecated ClusterWS/cws to ws ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15932))
+
+### Removed
+
+- Remove PubSubHubbub-related columns from accounts table ([Gargron](https://github.com/tootsuite/mastodon/pull/16170), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15857))
+- Remove dependency on @babel/plugin-proposal-class-properties ([ykzts](https://github.com/tootsuite/mastodon/pull/16155))
+- Remove dependency on pluck_each gem ([Gargron](https://github.com/tootsuite/mastodon/pull/16012))
+- Remove spam check and dependency on nilsimsa gem ([Gargron](https://github.com/tootsuite/mastodon/pull/16011))
+- Remove MySQL-specific code from Mastodon::MigrationHelpers ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15924))
+- Remove IE11 from supported browsers target ([gol-cha](https://github.com/tootsuite/mastodon/pull/15779))
+
+### Fixed
+
+- Fix "You might be interested in" flashing while searching in web UI ([Gargron](https://github.com/tootsuite/mastodon/pull/16162))
+- Fix display of posts without text content in web UI ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15665))
+- Fix Google Translate breaking web UI ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15610), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15611))
+- Fix web UI crashing when SVG support is disabled ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15809))
+- Fix web UI crash when a status opened in the media modal is deleted ([kaias1jp](https://github.com/tootsuite/mastodon/pull/15701))
+- Fix OCR language data failing to load in web UI ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15519))
+- Fix footer links not being clickable in Safari in web UI ([noellabo](https://github.com/tootsuite/mastodon/pull/15496))
+- Fix autofocus/autoselection not working on mobile in web UI ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15555), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15985))
+- Fix media redownload worker retrying on unexpected response codes ([Gargron](https://github.com/tootsuite/mastodon/pull/16111))
+- Fix thread resolve worker retrying when status no longer exists ([Gargron](https://github.com/tootsuite/mastodon/pull/16109))
+- Fix n+1 query when rendering with statuses in REST API ([abcang](https://github.com/tootsuite/mastodon/pull/15641))
+- Fix delete of local reply to local parent not being forwarded ([Gargron](https://github.com/tootsuite/mastodon/pull/16096))
+- Fix remote reporters not receiving suspend/unsuspend activities ([Gargron](https://github.com/tootsuite/mastodon/pull/16050))
+- Fix understanding (not fully qualified) `as:Public` and `Public` ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15948))
+- Fix actor update not being distributed on profile picture deletion ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15461))
+- Fix processing of incoming Delete activities ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16084))
+- Fix processing of incoming Block activities ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15546))
+- Fix URIs of repeat follow requests not being recorded ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15662))
+- Fix error on requests with no `Digest` header ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15782))
+- Fix activity object not requiring signature in secure mode ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15592))
+- Fix database serialization failure returning HTTP 500 ([Gargron](https://github.com/tootsuite/mastodon/pull/16101))
+- Fix media processing getting stuck on too much stdin/stderr ([Gargron](https://github.com/tootsuite/mastodon/pull/16136))
+- Fix trying to fetch key from empty URI when verifying HTTP signature ([Gargron](https://github.com/tootsuite/mastodon/pull/16100))
+- Fix `tootctl maintenance fix-duplicates` failures ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15923), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15515))
+- Fix error when removing status caused by race condition ([Gargron](https://github.com/tootsuite/mastodon/pull/16099))
+- Fix misspelled URLs character counting ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15382))
+- Fix Sidekiq hanging forever due to a Resolv bug in Ruby 2.7.3 ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16157))
+- Fix edge case where follow limit interferes with accepting a follow ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16098))
+- Fix inconsistent lead text style in admin UI ([Gargron](https://github.com/tootsuite/mastodon/pull/16052), [ClearlyClaire](https://github.com/tootsuite/mastodon/pull/16086))
+- Fix reports of already suspended accounts being recorded ([Gargron](https://github.com/tootsuite/mastodon/pull/16047))
+- Fix sign-up restrictions based on IP addresses not being enforced ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15607))
+- Fix YouTube embeds failing due to YouTube serving wrong OEmbed URLs ([Gargron](https://github.com/tootsuite/mastodon/pull/15716))
+- Fix error when rendering public pages with media without meta ([Gargron](https://github.com/tootsuite/mastodon/pull/16112))
+- Fix misaligned logo on follow button on public pages ([noellabo](https://github.com/tootsuite/mastodon/pull/15458))
+- Fix video modal not working on public pages ([noellabo](https://github.com/tootsuite/mastodon/pull/15469))
+- Fix race conditions on account migration creation ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15597))
+- Fix not being able to change world filter expiration back to “Never” ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15858))
+- Fix `.env.vagrant` not setting `RAILS_ENV` variable ([chandrn7](https://github.com/tootsuite/mastodon/pull/15709))
+- Fix error when muting users with `duration` in REST API ([Tak](https://github.com/tootsuite/mastodon/pull/15516))
+- Fix border padding on front page in light theme ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15926))
+- Fix wrong URL to custom CSS when `CDN_HOST` is used ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15927))
+- Fix `tootctl accounts unfollow` ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15639))
+- Fix some issues with SAML account creation ([Gargron](https://github.com/tootsuite/mastodon/pull/15222))
+- Fix MX validation applying for explicitly allowed e-mail domains ([ClearlyClaire](https://github.com/tootsuite/mastodon/pull/15930))
+
+### Security
+
+- Fix app name, website and redirect URIs not having a maximum length ([Gargron](https://github.com/tootsuite/mastodon/pull/16042))
+
 ## [3.3.0] - 2020-12-27
 ### Added
 
