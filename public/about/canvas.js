@@ -16,7 +16,7 @@ const context = canvasEl.getContext('2d')
 
 // Set up image
 const brush = new window.Image()
-brush.src = 'melon.png'
+brush.src = '../melon.png'
 
 // Functions
 function resizeCanvas () {

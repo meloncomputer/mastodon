@@ -58,7 +58,7 @@ a {
 }
 
 .splash-canvas {
-  background: url('hello.jpg');
+  background: url('../hello.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
