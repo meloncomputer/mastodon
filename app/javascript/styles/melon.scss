@@ -1,0 +1,183 @@
+$ui-base-color: #101010;
+$ui-highlight-color: #ffffff;
+$ui-primary-color: #ececec;
+$ui-secondary-color: #f0f0f0;
+
+*:not(.fa) {
+  font-family: Helvetica, Arial, sans-serif
+}
+
+body,
+body.lighter,
+body.error {
+  background: #000;
+}
+
+.splash {
+  display: block;
+  height: 100%;
+  padding: 1rem;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.splash,
+.splash-login {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
+}
+
+.splash h1,
+.splash h2,
+.splash a {
+  color: #fff;
+  display: block;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 1;
+  max-width: 40rem;
+}
+
+.splash h1 {
+  margin-top: 2rem
+}
+
+.splash h2 {
+  margin: 2rem 0
+}
+
+.splash .logo-splash {
+  width: 7rem;
+  margin-top: 20vh
+}
+
+.brand .logo {
+  width: 1.7rem
+}
+
+.logo {
+  width: 7rem
+}
+
+.splash-login {
+  position: fixed;
+  top: 1rem;
+  right: 1rem
+}
+
+.splash-login a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.2rem
+}
+
+.splash-login a::after {
+  content: '\2192'
+}
+
+.landing {
+  margin-top: 15rem;
+  padding: 1rem
+}
+
+.simple_form input[type="email"],
+.simple_form input[type="number"],
+.simple_form input[type="password"],
+.simple_form input[type="text"],
+.simple_form textarea {
+  border-bottom: 1px solid #fff;
+  border-radius: 0;
+}
+
+.simple_form input[type="email"]:hover,
+.simple_form input[type="number"]:hover,
+.simple_form input[type="password"]:hover,
+.simple_form input[type="text"]:hover,
+.simple_form textarea:hover {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.simple_form input[type="email"]:focus,
+.simple_form input[type="number"]:focus,
+.simple_form input[type="password"]:focus,
+.simple_form input[type="text"]:focus,
+.simple_form textarea:focus {
+  border-radius: 4px;
+}
+
+.column-about {
+  width: 400%;
+}
+
+.about-melon {
+  font-size: 1.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
+}
+
+.admin-wrapper .sidebar .logo {
+  height: auto;
+}
+
+a.active {
+  text-decoration: underline;
+}
+
+li.selected li.selected a.selected,
+.btn,
+.button,
+.admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
+  color: #000!important;
+}
+
+.button.logo-button svg {
+  fill: #000;
+}
+
+.compose-form__publish-button-wrapper .button {
+  color: #fff!important;
+  background: #000;
+  border: 1px solid #fff!important;
+}
+
+.compose-form__publish-button-wrapper .button:hover {
+  color: #000!important;
+  background: #fff;
+}
+
+.icon-with-badge__badge {
+  color: #000!important;
+}
+
+.dropdown-menu__item a:active,
+.dropdown-menu__item a:focus,
+.dropdown-menu__item a:hover {
+  color: #000;
+}
+
+.emoji-mart-anchor-selected,
+.emoji-mart-anchor-selected:hover {
+  color: #525252;
+}
+
+.emoji-mart-anchor-bar {
+  background-color: #525252;
+}
+
+.react-toggle--checked .react-toggle-track,
+.react-toggle--checked .react-toggle-track,
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background: #000;
+}
+
+.react-toggle-thumb {
+  border: none;
+}
+
+.search__input {
+  background: #212121;
+}
+
+@import 'application';
