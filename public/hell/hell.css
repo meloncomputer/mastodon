@@ -1,0 +1,106 @@
+* { box-sizing: border-box; }
+::selection { background: red; }
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #000;
+    background-image: url('fire.gif');
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    color: #fff;
+}
+.main {
+    width: 90%;
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+img.logo {
+    width: 5rem;
+    margin: 5rem 0 3rem;
+}
+
+.video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin-top: 1rem;
+    border: 3px solid #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0 2rem #fff;
+}
+
+.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.visit {
+    display: flex;
+    background: linear-gradient(rgb(39, 3, 3), #000);
+    color: #fff;
+    margin: 5rem auto 0;
+    border-radius: 2rem;
+    overflow: hidden;
+    width: 100%;
+    max-width: 50rem;
+    box-shadow: 3rem 3rem 3rem #000;
+}
+
+.visit-text,
+.visit-image {
+    width: 100%;
+}
+
+.visit-text {
+    font-size: 1.2rem;
+    padding: 2rem;
+    text-align: left;
+}
+
+.visit-text .lead {
+    font-size: 1.6rem;
+}
+
+span {
+    background: #ccc;
+    color: #000;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-weight: bold;
+}
+
+.visit-image {
+    background-image: url('gallery.png');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 1000px) {
+    .visit {
+        display: block;
+    }
+
+    .visit-text {
+        font-size: 1.1rem;
+    }
+}
