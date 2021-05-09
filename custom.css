@@ -1,0 +1,224 @@
+.about-melon {
+    font-size: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: none;
+}
+
+.about-melon h2,
+.about-melon h3 {
+    font-family: Helvetica, Arial, sans-serif!important;
+}
+
+.about-melon h2 {
+    max-width: 30rem;
+}
+
+.about-melon h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 6rem 0 1.5rem;
+}
+
+.admin-wrapper .sidebar .logo {
+    height: auto;
+}
+
+a.active {
+    text-decoration: underline;
+}
+
+li.selected li.selected a.selected,
+.btn,
+.button:not(.button-secondary),
+.actions button,
+.input-copy button,
+.simple_form button,
+.admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
+    color: #000!important;
+}
+
+.button.logo-button svg {
+    fill: #000;
+}
+
+.compose-form__publish-button-wrapper .button,
+.button-secondary {
+    color: #fff!important;
+    background: #000;
+    border: 1px solid #fff!important;
+}
+
+.compose-form__publish-button-wrapper .button:hover,
+.button-secondary:hover {
+    color: #000!important;
+    background: #fff;
+}
+
+.compose-form__poll-wrapper .button.button-secondary {
+    color: #525252!important;
+    border-color: #525252!important;
+}
+
+.icon-with-badge__badge {
+    color: #000!important;
+}
+
+.dropdown-menu__item a:active,
+.dropdown-menu__item a:focus,
+.dropdown-menu__item a:hover {
+    color: #000;
+}
+
+.emoji-mart-anchor-selected,
+.emoji-mart-anchor-selected:hover {
+    color: #525252;
+}
+
+.emoji-mart-anchor-bar {
+    background-color: #525252;
+}
+
+.privacy-dropdown__option.active .privacy-dropdown__option__content, .privacy-dropdown__option.active .privacy-dropdown__option__content strong, .privacy-dropdown__option:hover .privacy-dropdown__option__content, .privacy-dropdown__option:hover .privacy-dropdown__option__content strong {
+    color: #000;
+    text-decoration: underline;
+}
+.privacy-dropdown__option.active, .privacy-dropdown__option:hover, .text-icon-button.active, .icon-button.inverted.active, .compose-form__sensitive-button .icon-button.active {
+    color: #000!important;
+}
+.compose-form__sensitive-button .checkbox.active {
+    border-color: #000;
+    background: #000;
+}
+
+
+.react-toggle--checked .react-toggle-track,
+.react-toggle--checked .react-toggle-track,
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background: #000;
+}
+
+.react-toggle-thumb {
+    border: none;
+}
+
+.search__input {
+    background: #212121;
+}
+
+.simple_form input[type="email"],
+.simple_form input[type="number"],
+.simple_form input[type="password"],
+.simple_form input[type="text"],
+.simple_form textarea {
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+}
+
+.simple_form input[type="email"]:hover,
+.simple_form input[type="number"]:hover,
+.simple_form input[type="password"]:hover,
+.simple_form input[type="text"]:hover,
+.simple_form textarea:hover {
+    border-bottom: 1px solid #ddd;
+}
+
+.simple_form input[type="email"]:focus,
+.simple_form input[type="number"]:focus,
+.simple_form input[type="password"]:focus,
+.simple_form input[type="text"]:focus,
+.simple_form textarea:focus {
+    border-radius: 4px;
+}
+
+.drawer__inner {
+    background: #000;
+}
+
+.status__content__read-more-button {
+    color: #525252;
+}
+
+.drawer__inner__mastodon {
+    display: none;
+}
+
+.poll__text {
+    mix-blend-mode: difference;
+}
+
+.modal-root .button:not(.confirmation-modal__cancel-button) {
+    background: #000!important;
+    color: #fff!important;
+}
+
+.upload-progress__tracker {
+    background: #000;
+}
+
+.account__avatar,
+.account__avatar-overlay-base,
+.account__avatar-overlay-overlay {
+    border-radius: 100%;
+}
+
+.detailed-status__display-avatar .account__avatar {
+    width: 3rem;
+}
+
+.status__avatar .account__avatar {
+    width: 100%;
+}
+
+.splash h2 {
+    margin-top: 5rem;
+}
+
+.content-heading-actions {
+    margin-bottom: 1rem;
+}
+
+.logo-resources {
+    display: none;
+}
+
+.search-popout * {
+    color: #999!important;
+}
+
+.search-popout em {
+    color: #000!important;
+}
+
+.poll__option.editable input[type="text"] {
+    border-color: #ddd;
+}
+
+.poll__input {
+    border-color: #333;
+}
+
+@media (max-width: 600px) {
+    .tabs-bar__wrapper .tabs-bar {
+    margin-bottom: 0 !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    }
+    .columns-area--mobile .scrollable {
+    padding-bottom: 10rem;
+    }
+    .floating-action-button {
+    bottom: 4.3125rem;
+    }
+    .column-about {
+    width: 100%;
+    }
+    .about-melon {
+    font-size: 1.2rem!important;
+    line-height: 1.5;
+    }
+}
