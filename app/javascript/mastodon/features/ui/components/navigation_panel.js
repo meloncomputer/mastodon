@@ -22,10 +22,10 @@ const NavigationPanel = () => (
 
     <hr />
 
-    <a className='column-link column-link--transparent' href='/settings/preferences'><Icon className='column-link__icon' id='cog' fixedWidth /><FormattedMessage id='navigation_bar.preferences' defaultMessage='Preferences' /></a>
     <a className='column-link column-link--transparent' href='https://melon.computer/discord'><Icon className='column-link__icon' id='comments' fixedWidth />Discord</a>
     <a className='column-link column-link--transparent' href='https://cafe.melon.computer'><Icon className='column-link__icon' id='coffee' fixedWidth />Cafe</a>
     <a className='column-link column-link--transparent' href='https://minecraft.melon.computer'><Icon className='column-link__icon' id='gamepad' fixedWidth />Minecraft</a>
+    <a className='column-link column-link--transparent' href='/settings/preferences'><Icon className='column-link__icon' id='cog' fixedWidth /><FormattedMessage id='navigation_bar.preferences' defaultMessage='Preferences' /></a>
 
     {showTrends && <div className='flex-spacer' />}
     {showTrends && <TrendsContainer />}
