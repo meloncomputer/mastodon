@@ -43,6 +43,10 @@ li.selected li.selected a.selected,
     fill: #000;
 }
 
+.floating-action-button {
+    display: none;
+}
+
 .compose-form__publish-button-wrapper .button,
 .button-secondary {
     color: #fff!important;
